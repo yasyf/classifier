@@ -14,15 +14,19 @@ is transformed to
 
 ## Usage
 
-Simply include [the compiled script](gen/classifier.js) in your page's `<head/>`, and initialize it. An example is given below.
+Simply include [the compiled script](gen/classifier.js) in your page's `<head/>`, and construct a new `Classifier` object. The constructor takes an optional parameter, which is the DOM element you which to look for class numbers in (it defaults to the entire `<body/>`). Call `Classifier.transformDom()` when you are ready to replace the class numbers with names.
+
+An example is given below.
 
 ```html
-  <script src="//path/to/classifier.js"></script>
+  <head>
+    <script src="//path/to/classifier.js"></script>
+  </head>
 ```
 
 ```javascript
   var classifier = new Classifier()
   $(document).ready(function() {
-    classifier.transformDom()
+    classifier.transformDom();
   });
 ```
